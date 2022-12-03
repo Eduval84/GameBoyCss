@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 
+app.set('views','./src/public/view')
+app.set('view engine', 'pug')
+
 app.get("/", (req, res) => {
-    res.send("Probando express");
-    res.end;
+   res.render('index')
 })
 
-app.listen(5500, () =>{
-    console.log("------------Server runing on port 5500")
-})
+module.exports = app
+
